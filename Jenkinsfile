@@ -23,7 +23,9 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying...'
-                // deploy steps
+                withAWS(credentials: 'aws_yubin') {
+                    sh 'aws s3 cp build/libs/apirdsdemo-0.0.1-SNAPSHOT.jar s3://yubin-build-files/'
+                }
             }
         }
     }
