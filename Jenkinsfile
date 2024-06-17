@@ -4,13 +4,14 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/urstory/apirdsdemo.git', credentialsId: 'carami_github_id'
+                git branch: 'main', url: 'https://github.com/kongkong2233/git_test.git', credentialsId: 'yubin_github_id'
             }
         }
         stage('Build') {
             steps {
                 echo 'Building...'
-                // build steps
+                sh 'chmod 755 ./gradlew'
+                sh './gradlew build'
             }
         }
         stage('Test') {
