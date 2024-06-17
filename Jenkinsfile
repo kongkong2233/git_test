@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         AWS_DEFAULT_REGION = 'ap-northeast-2'
-        S3_BUCKET = 'carami-build-files'
+        S3_BUCKET = 'yubin-build-files1'
         JAR_FILE = 'build/libs/apirdsdemo-0.0.1-SNAPSHOT.jar'
         APP_NAME = 'apirdsdemo'
         DEPLOY_GROUP = 'apirdsdemo-group-name'
@@ -43,7 +43,7 @@ pipeline {
         }
         stage('Upload to S3') {
             steps {
-                withAWS(credentials: 'aws_carami') {
+                withAWS(credentials: 'aws_yubin') {
                     s3Upload(bucket: env.S3_BUCKET, file: env.DEPLOY_ZIP)
                 }
             }
