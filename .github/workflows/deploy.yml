@@ -44,4 +44,4 @@ jobs:
                                   aws deploy create-deployment \
                                     --application-name apirdsdemo \
                                     --deployment-group-name apirdsdemo-group-name \
-                                    --s3-location bucket=carami-build-files,key=deployment.zip,bundleType=zip
+                                    --s3-location bucket=yubin-build-files1,key=deployment.zip,bundleType=zip
